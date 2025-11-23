@@ -1,0 +1,17 @@
+## Documentation Kommo API
+_kommo-api-docs
+
+## Environment variables
+.env
+
+## Node modules
+node_modules
+
+## Dist
+dist
+
+## Logs
+logs
+
+## Temp
+temp
