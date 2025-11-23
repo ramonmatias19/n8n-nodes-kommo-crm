@@ -4,9 +4,6 @@
 Este é um nó não oficial do n8n para integração com a API do Kommo CRM.
 </p>
 
-> **Nota de transparência:** Este projeto é uma iniciativa independente, sem qualquer vínculo, parceria oficial ou relação de afiliação com o Kommo CRM.  
-> Todo o desenvolvimento e manutenção são realizados por entusiastas da comunidade para facilitar integrações no n8n.
-
 <br>
 	
 <div align="center">
