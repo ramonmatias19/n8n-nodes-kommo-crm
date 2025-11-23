@@ -11,7 +11,7 @@ export class KommoCrmApi implements ICredentialType {
 	displayName = 'Kommo Crm API';
 
 	// Link to your community node's README
-	documentationUrl = 'https://github.com/org/-kommo-crm?tab=readme-ov-file#credentials';
+	documentationUrl = 'https://developers.kommo.com/reference/account-parameters';
 
 	properties: INodeProperties[] = [
 		{
