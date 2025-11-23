@@ -1,8 +1,12 @@
 # n8n-nodes-kommo-crm
 
 <p align="center"><br>
-Este Community Node é uma solução 100% gratuita, criada com o intuito de simplificar e auxiliar toda a comunidade a integrar e utilizar ao máximo os principais recursos oferecidos pelo <b>Kommo CRM</b> em seus projetos no N8N.
+Este é um nó não oficial do n8n para integração com a API do Kommo CRM.
 </p>
+
+> **Nota de transparência:** Este projeto é uma iniciativa independente, sem qualquer vínculo, parceria oficial ou relação de afiliação com o Kommo CRM.  
+> Todo o desenvolvimento e manutenção são realizados por entusiastas da comunidade para facilitar integrações no n8n.
+
 <br>
 	
 <div align="center">
@@ -397,7 +401,7 @@ npm install n8n-nodes-kommo-crm
 Para usar este nó, você precisa de uma conta Kommo CRM ativa e de um token de acesso.
 
 ### Pré-requisitos
-1. Uma conta ativa no [Kommo CRM](https://kommo.com/)
+1. Uma conta ativa no [Kommo CRM](https://www.kommo.com/br/)
 2. Um token de acesso API (gerado nas configurações da conta)
 
 ### Configuração
@@ -407,31 +411,6 @@ Para usar este nó, você precisa de uma conta Kommo CRM ativa e de um token de 
 4. Configure as credenciais no n8n:
    - **Subdomain**: Seu subdomínio Kommo (ex: minhacompanhia)
    - **Access Token**: O token gerado
-
-<h1></h1>
-
-<h3>📊 Estatísticas da API</h3>
-
-### Cobertura por Recurso
-- **Recursos Implementados**: 20/21 (~95%)
-- **Operações CRUD**: 60+ operações
-- **Filtros Avançados**: 70+ opções de filtragem
-- **Recursos Especiais**: Chats, Arquivos, IA, Custom Fields, Chamadas, Listas
-
-### Principais Funcionalidades
-- ✅ **Comunicação Omnichannel**: Chats API completa
-- ✅ **Gerenciamento de Arquivos**: Upload, download, versionamento
-- ✅ **Inteligência Artificial**: Análise e sugestões automatizadas
-- ✅ **Campos Personalizados**: Criação e gerenciamento dinâmico
-- ✅ **Funis de Vendas**: Gestão completa de pipelines
-- ✅ **Rastreamento de Origens**: UTM e analytics de leads
-
-### Compatibilidade
-- **Versão mínima do n8n**: 1.0.0
-- **Versão da API Kommo**: v4
-- **Cobertura da API**: ~95% (20 recursos principais)
-
-<h1></h1>
 
 <h3>💡 Uso</h3>
 
@@ -453,7 +432,7 @@ Para usar este nó, você precisa de uma conta Kommo CRM ativa e de um token de 
 
 <h3>📚 Recursos</h3>
 
-- [Documentação da API Kommo](https://kommo.readme.io/)
+- [Documentação da API Kommo](https://developers.kommo.com/reference/)
 - [Documentação de nós comunitários n8n](https://docs.n8n.io/integrations/#community-nodes)
 - [Repositório GitHub](https://github.com/ramonmatias19/n8n-nodes-kommo-crm)
 
