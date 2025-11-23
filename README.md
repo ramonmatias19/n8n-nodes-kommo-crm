@@ -459,45 +459,6 @@ Para usar este nó, você precisa de uma conta Kommo CRM ativa e de um token de 
 
 <h1></h1>
 
-<h3>📝 Histórico de versões</h3>
-
-### v0.4.0 🎯 **COBERTURA 100% COMPLETA DA API KOMMO**
-- ✅ **Calls API**: Registro completo de chamadas (inbound/outbound)
-- ✅ **Lists API**: Gerenciamento de listas e elementos (regulares/produtos)
-- ✅ **Templates API**: Templates de resposta com placeholders e botões
-- ✅ **Incoming Leads API**: Sistema de análise de leads recebidos
-- 🔄 **Cobertura**: Atingida 100% da API v4 do Kommo
-- 🎯 **20 recursos principais** implementados completamente
-- 📊 **70+ filtros avançados** e **60+ operações CRUD**
-
-### v0.3.0 🚀 **Expansão Massiva da API**
-- ✅ **Chats API**: Comunicação omnichannel completa (WhatsApp, Telegram, Instagram, etc.)
-- ✅ **Files API**: Gerenciamento avançado de arquivos com versionamento
-- ✅ **Custom Fields API**: Criação e gerenciamento dinâmico de campos
-- ✅ **AI API**: Análise inteligente de leads e sugestões automatizadas
-- ✅ **Pipelines API**: Gestão completa de funis de vendas
-- ✅ **Sources API**: Rastreamento avançado de origens com UTM
-- ✅ **Tags**: Operações completas de attach/detach
-- ✅ **Events**: 15+ novos filtros avançados
-- 🔄 **Cobertura**: Expandida de ~45% para ~95% da API Kommo
-- 🎯 **16 recursos principais** implementados completamente
-
-### v0.2.0
-- ✅ **Notes API**: CRUD completo para notas (texto, chamadas, SMS, geolocalização, anexos)
-- ✅ **Events API**: Listagem de eventos e tipos de eventos disponíveis
-- ✅ **Webhooks API**: Configuração e gerenciamento de webhooks
-- ✅ **Tags API**: Gerenciamento de tags por entidade
-- ✅ **Companies**: Adicionado suporte para atualização de empresas
-- 🔄 **Melhorias**: Cobertura expandida da API Kommo (de 20% para ~60%)
-
-### v0.1.0
-- Implementação inicial com suporte básico a Leads, Contacts, Tasks, Users e Companies
-- Suporte a operações CRUD para todas as entidades
-- Filtros avançados e paginação
-- Campos customizados suportados
-
-<h1></h1>
-
 <h3>🤝 Contribuição</h3>
 
 Contribua para o crescimento deste projeto! Você pode ajudar de diversas formas:  
