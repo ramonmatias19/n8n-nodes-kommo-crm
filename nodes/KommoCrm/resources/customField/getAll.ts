@@ -17,32 +17,14 @@ export const customFieldGetAllDescription: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'Limit',
-				name: 'limit',
-				type: 'number',
-				typeOptions: {
-					minValue: 1,
-				},
-				default: 50,
-				description: 'Max number of results to return',
+				displayName: 'Filter by Field Code',
+				name: 'filter_code',
+				type: 'string',
+				default: '',
 				routing: {
 					request: {
 						qs: {
-							limit: '={{ $value }}',
-						},
-					},
-				},
-			},
-			{
-				displayName: 'Page',
-				name: 'page',
-				type: 'number',
-				default: 1,
-				description: 'The page number to return',
-				routing: {
-					request: {
-						qs: {
-							page: '={{ $value }}',
+							'filter[code]': '={{ $value }}',
 						},
 					},
 				},
@@ -57,19 +39,6 @@ export const customFieldGetAllDescription: INodeProperties[] = [
 					request: {
 						qs: {
 							'filter[id]': '={{ $value }}',
-						},
-					},
-				},
-			},
-			{
-				displayName: 'Filter by Field Code',
-				name: 'filter_code',
-				type: 'string',
-				default: '',
-				routing: {
-					request: {
-						qs: {
-							'filter[code]': '={{ $value }}',
 						},
 					},
 				},
@@ -103,6 +72,37 @@ export const customFieldGetAllDescription: INodeProperties[] = [
 					request: {
 						qs: {
 							'filter[type]': '={{ $value }}',
+						},
+					},
+				},
+			},
+			{
+				displayName: 'Limit',
+				name: 'limit',
+				type: 'number',
+				typeOptions: {
+					minValue: 1,
+				},
+				default: 50,
+				description: 'Max number of results to return',
+				routing: {
+					request: {
+						qs: {
+							limit: '={{ $value }}',
+						},
+					},
+				},
+			},
+			{
+				displayName: 'Page',
+				name: 'page',
+				type: 'number',
+				default: 1,
+				description: 'The page number to return',
+				routing: {
+					request: {
+						qs: {
+							page: '={{ $value }}',
 						},
 					},
 				},

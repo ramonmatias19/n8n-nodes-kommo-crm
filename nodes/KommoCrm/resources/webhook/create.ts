@@ -42,92 +42,92 @@ export const webhookCreateDescription: INodeProperties[] = [
 				description: 'Events that will trigger this webhook',
 				options: [
 					{
-						name: 'Lead Responsible User Changed',
-						value: 'responsible_lead',
-					},
-					{
-						name: 'Contact Responsible User Changed',
-						value: 'responsible_contact',
-					},
-					{
-						name: 'Company Responsible User Changed',
-						value: 'responsible_company',
-					},
-					{
-						name: 'Task Responsible User Changed',
-						value: 'responsible_task',
-					},
-					{
-						name: 'Lead Restored',
-						value: 'restore_lead',
-					},
-					{
-						name: 'Contact Restored',
-						value: 'restore_contact',
-					},
-					{
-						name: 'Company Restored',
-						value: 'restore_company',
-					},
-					{
-						name: 'Lead Added',
-						value: 'add_lead',
-					},
-					{
-						name: 'Contact Added',
-						value: 'add_contact',
-					},
-					{
 						name: 'Company Added',
 						value: 'add_company',
-					},
-					{
-						name: 'Task Added',
-						value: 'add_task',
-					},
-					{
-						name: 'Lead Updated',
-						value: 'update_lead',
-					},
-					{
-						name: 'Contact Updated',
-						value: 'update_contact',
-					},
-					{
-						name: 'Company Updated',
-						value: 'update_company',
-					},
-					{
-						name: 'Lead Deleted',
-						value: 'delete_lead',
-					},
-					{
-						name: 'Contact Deleted',
-						value: 'delete_contact',
 					},
 					{
 						name: 'Company Deleted',
 						value: 'delete_company',
 					},
 					{
-						name: 'Task Deleted',
-						value: 'delete_task',
+						name: 'Company Responsible User Changed',
+						value: 'responsible_company',
+					},
+					{
+						name: 'Company Restored',
+						value: 'restore_company',
+					},
+					{
+						name: 'Company Updated',
+						value: 'update_company',
+					},
+					{
+						name: 'Contact Added',
+						value: 'add_contact',
+					},
+					{
+						name: 'Contact Deleted',
+						value: 'delete_contact',
+					},
+					{
+						name: 'Contact Responsible User Changed',
+						value: 'responsible_contact',
+					},
+					{
+						name: 'Contact Restored',
+						value: 'restore_contact',
+					},
+					{
+						name: 'Contact Updated',
+						value: 'update_contact',
+					},
+					{
+						name: 'Lead Added',
+						value: 'add_lead',
+					},
+					{
+						name: 'Lead Deleted',
+						value: 'delete_lead',
+					},
+					{
+						name: 'Lead Responsible User Changed',
+						value: 'responsible_lead',
+					},
+					{
+						name: 'Lead Restored',
+						value: 'restore_lead',
 					},
 					{
 						name: 'Lead Status Changed',
 						value: 'status_lead',
 					},
 					{
-						name: 'Note Added to Lead',
-						value: 'note_lead',
+						name: 'Lead Updated',
+						value: 'update_lead',
+					},
+					{
+						name: 'Note Added to Company',
+						value: 'note_company',
 					},
 					{
 						name: 'Note Added to Contact',
 						value: 'note_contact',
 					},
 					{
-						name: 'Note Added to Company',
-						value: 'note_company',
+						name: 'Note Added to Lead',
+						value: 'note_lead',
+					},
+					{
+						name: 'Task Added',
+						value: 'add_task',
+					},
+					{
+						name: 'Task Deleted',
+						value: 'delete_task',
+					},
+					{
+						name: 'Task Responsible User Changed',
+						value: 'responsible_task',
 					},
 					{
 						name: 'WhatsApp Template Submitted',

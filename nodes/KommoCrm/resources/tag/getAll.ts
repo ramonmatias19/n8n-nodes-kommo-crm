@@ -17,6 +17,34 @@ export const tagGetAllDescription: INodeProperties[] = [
 		},
 		options: [
 			{
+				displayName: 'Filter by Tag IDs',
+				name: 'filter_ids',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of tag IDs to filter by',
+				routing: {
+					request: {
+						qs: {
+							'filter[id][]': '={{ $value.split(",").map(id => id.trim()) }}',
+						},
+					},
+				},
+			},
+			{
+				displayName: 'Filter by Tag Name',
+				name: 'filter_name',
+				type: 'string',
+				default: '',
+				description: 'Exact tag name to filter by',
+				routing: {
+					request: {
+						qs: {
+							'filter[name]': '={{ $value }}',
+						},
+					},
+				},
+			},
+			{
 				displayName: 'Limit',
 				name: 'limit',
 				type: 'number',
@@ -57,34 +85,6 @@ export const tagGetAllDescription: INodeProperties[] = [
 					request: {
 						qs: {
 							query: '={{ $value }}',
-						},
-					},
-				},
-			},
-			{
-				displayName: 'Filter by Tag IDs',
-				name: 'filter_ids',
-				type: 'string',
-				default: '',
-				description: 'Comma-separated list of tag IDs to filter by',
-				routing: {
-					request: {
-						qs: {
-							'filter[id][]': '={{ $value.split(",").map(id => id.trim()) }}',
-						},
-					},
-				},
-			},
-			{
-				displayName: 'Filter by Tag Name',
-				name: 'filter_name',
-				type: 'string',
-				default: '',
-				description: 'Exact tag name to filter by',
-				routing: {
-					request: {
-						qs: {
-							'filter[name]': '={{ $value }}',
 						},
 					},
 				},

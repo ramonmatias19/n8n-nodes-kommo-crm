@@ -39,28 +39,15 @@ export const noteUpdateDescription: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'Text',
-				name: 'text',
+				displayName: 'Address',
+				name: 'address',
 				type: 'string',
 				default: '',
-				description: 'Updated text content for the note',
+				description: 'Updated address for geolocation notes',
 				routing: {
 					send: {
 						type: 'body',
-						property: 'params.text',
-					},
-				},
-			},
-			{
-				displayName: 'Phone Number',
-				name: 'phone',
-				type: 'string',
-				default: '',
-				description: 'Updated phone number for call and SMS notes',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'params.phone',
+						property: 'params.address',
 					},
 				},
 			},
@@ -78,19 +65,6 @@ export const noteUpdateDescription: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Call Source',
-				name: 'source',
-				type: 'string',
-				default: '',
-				description: 'Updated source of the call',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'params.source',
-					},
-				},
-			},
-			{
 				displayName: 'Call Link',
 				name: 'link',
 				type: 'string',
@@ -104,67 +78,28 @@ export const noteUpdateDescription: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Unique ID',
-				name: 'uniq',
+				displayName: 'Call Source',
+				name: 'source',
 				type: 'string',
 				default: '',
-				description: 'Updated unique identifier',
+				description: 'Updated source of the call',
 				routing: {
 					send: {
 						type: 'body',
-						property: 'params.uniq',
+						property: 'params.source',
 					},
 				},
 			},
 			{
-				displayName: 'Service Name',
-				name: 'service',
+				displayName: 'File Name',
+				name: 'file_name',
 				type: 'string',
 				default: '',
-				description: 'Updated service name for service messages',
+				description: 'Updated display name of the file',
 				routing: {
 					send: {
 						type: 'body',
-						property: 'params.service',
-					},
-				},
-			},
-			{
-				displayName: 'Address',
-				name: 'address',
-				type: 'string',
-				default: '',
-				description: 'Updated address for geolocation notes',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'params.address',
-					},
-				},
-			},
-			{
-				displayName: 'Longitude',
-				name: 'longitude',
-				type: 'string',
-				default: '',
-				description: 'Updated longitude coordinate',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'params.longitude',
-					},
-				},
-			},
-			{
-				displayName: 'Latitude',
-				name: 'latitude',
-				type: 'string',
-				default: '',
-				description: 'Updated latitude coordinate',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'params.latitude',
+						property: 'params.file_name',
 					},
 				},
 			},
@@ -195,15 +130,80 @@ export const noteUpdateDescription: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'File Name',
-				name: 'file_name',
+				displayName: 'Latitude',
+				name: 'latitude',
 				type: 'string',
 				default: '',
-				description: 'Updated display name of the file',
+				description: 'Updated latitude coordinate',
 				routing: {
 					send: {
 						type: 'body',
-						property: 'params.file_name',
+						property: 'params.latitude',
+					},
+				},
+			},
+			{
+				displayName: 'Longitude',
+				name: 'longitude',
+				type: 'string',
+				default: '',
+				description: 'Updated longitude coordinate',
+				routing: {
+					send: {
+						type: 'body',
+						property: 'params.longitude',
+					},
+				},
+			},
+			{
+				displayName: 'Phone Number',
+				name: 'phone',
+				type: 'string',
+				default: '',
+				description: 'Updated phone number for call and SMS notes',
+				routing: {
+					send: {
+						type: 'body',
+						property: 'params.phone',
+					},
+				},
+			},
+			{
+				displayName: 'Service Name',
+				name: 'service',
+				type: 'string',
+				default: '',
+				description: 'Updated service name for service messages',
+				routing: {
+					send: {
+						type: 'body',
+						property: 'params.service',
+					},
+				},
+			},
+			{
+				displayName: 'Text',
+				name: 'text',
+				type: 'string',
+				default: '',
+				description: 'Updated text content for the note',
+				routing: {
+					send: {
+						type: 'body',
+						property: 'params.text',
+					},
+				},
+			},
+			{
+				displayName: 'Unique ID',
+				name: 'uniq',
+				type: 'string',
+				default: '',
+				description: 'Updated unique identifier',
+				routing: {
+					send: {
+						type: 'body',
+						property: 'params.uniq',
 					},
 				},
 			},

@@ -71,8 +71,8 @@ export const noteGetAllDescription: INodeProperties[] = [
 				description: 'Filter notes by type',
 				options: [
 					{
-						name: 'Common (Text)',
-						value: 'common',
+						name: 'Attachment',
+						value: 'attachment',
 					},
 					{
 						name: 'Call In',
@@ -83,12 +83,20 @@ export const noteGetAllDescription: INodeProperties[] = [
 						value: 'call_out',
 					},
 					{
-						name: 'Service Message',
-						value: 'service_message',
+						name: 'Common (Text)',
+						value: 'common',
+					},
+					{
+						name: 'Extended Service Message',
+						value: 'extended_service_message',
 					},
 					{
 						name: 'Geolocation',
 						value: 'geolocation',
+					},
+					{
+						name: 'Service Message',
+						value: 'service_message',
 					},
 					{
 						name: 'SMS In',
@@ -97,14 +105,6 @@ export const noteGetAllDescription: INodeProperties[] = [
 					{
 						name: 'SMS Out',
 						value: 'sms_out',
-					},
-					{
-						name: 'Extended Service Message',
-						value: 'extended_service_message',
-					},
-					{
-						name: 'Attachment',
-						value: 'attachment',
 					},
 				],
 				routing: {

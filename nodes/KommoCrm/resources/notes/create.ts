@@ -33,8 +33,8 @@ export const noteCreateDescription: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Common (Text)',
-				value: 'common',
+				name: 'Attachment',
+				value: 'attachment',
 			},
 			{
 				name: 'Call In',
@@ -45,12 +45,20 @@ export const noteCreateDescription: INodeProperties[] = [
 				value: 'call_out',
 			},
 			{
-				name: 'Service Message',
-				value: 'service_message',
+				name: 'Common (Text)',
+				value: 'common',
+			},
+			{
+				name: 'Extended Service Message',
+				value: 'extended_service_message',
 			},
 			{
 				name: 'Geolocation',
 				value: 'geolocation',
+			},
+			{
+				name: 'Service Message',
+				value: 'service_message',
 			},
 			{
 				name: 'SMS In',
@@ -59,14 +67,6 @@ export const noteCreateDescription: INodeProperties[] = [
 			{
 				name: 'SMS Out',
 				value: 'sms_out',
-			},
-			{
-				name: 'Extended Service Message',
-				value: 'extended_service_message',
-			},
-			{
-				name: 'Attachment',
-				value: 'attachment',
 			},
 		],
 		default: 'common',
@@ -89,28 +89,15 @@ export const noteCreateDescription: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'Text',
-				name: 'text',
+				displayName: 'Address',
+				name: 'address',
 				type: 'string',
 				default: '',
-				description: 'Text content for common, service message, SMS, and geolocation notes',
+				description: 'Address for geolocation notes',
 				routing: {
 					send: {
 						type: 'body',
-						property: 'params.text',
-					},
-				},
-			},
-			{
-				displayName: 'Phone Number',
-				name: 'phone',
-				type: 'string',
-				default: '',
-				description: 'Phone number for call and SMS notes',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'params.phone',
+						property: 'params.address',
 					},
 				},
 			},
@@ -128,19 +115,6 @@ export const noteCreateDescription: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Call Source',
-				name: 'source',
-				type: 'string',
-				default: '',
-				description: 'Source of the call (e.g., Twilio, onlinePBX)',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'params.source',
-					},
-				},
-			},
-			{
 				displayName: 'Call Link',
 				name: 'link',
 				type: 'string',
@@ -154,67 +128,28 @@ export const noteCreateDescription: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Unique ID',
-				name: 'uniq',
+				displayName: 'Call Source',
+				name: 'source',
 				type: 'string',
 				default: '',
-				description: 'Unique identifier for the call or service',
+				description: 'Source of the call (e.g., Twilio, onlinePBX)',
 				routing: {
 					send: {
 						type: 'body',
-						property: 'params.uniq',
+						property: 'params.source',
 					},
 				},
 			},
 			{
-				displayName: 'Service Name',
-				name: 'service',
+				displayName: 'File Name',
+				name: 'file_name',
 				type: 'string',
 				default: '',
-				description: 'Service name for service message notes',
+				description: 'Display name of the file for attachment notes',
 				routing: {
 					send: {
 						type: 'body',
-						property: 'params.service',
-					},
-				},
-			},
-			{
-				displayName: 'Address',
-				name: 'address',
-				type: 'string',
-				default: '',
-				description: 'Address for geolocation notes',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'params.address',
-					},
-				},
-			},
-			{
-				displayName: 'Longitude',
-				name: 'longitude',
-				type: 'string',
-				default: '',
-				description: 'Longitude coordinate for geolocation notes',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'params.longitude',
-					},
-				},
-			},
-			{
-				displayName: 'Latitude',
-				name: 'latitude',
-				type: 'string',
-				default: '',
-				description: 'Latitude coordinate for geolocation notes',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'params.latitude',
+						property: 'params.file_name',
 					},
 				},
 			},
@@ -245,15 +180,41 @@ export const noteCreateDescription: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'File Name',
-				name: 'file_name',
+				displayName: 'Latitude',
+				name: 'latitude',
 				type: 'string',
 				default: '',
-				description: 'Display name of the file for attachment notes',
+				description: 'Latitude coordinate for geolocation notes',
 				routing: {
 					send: {
 						type: 'body',
-						property: 'params.file_name',
+						property: 'params.latitude',
+					},
+				},
+			},
+			{
+				displayName: 'Longitude',
+				name: 'longitude',
+				type: 'string',
+				default: '',
+				description: 'Longitude coordinate for geolocation notes',
+				routing: {
+					send: {
+						type: 'body',
+						property: 'params.longitude',
+					},
+				},
+			},
+			{
+				displayName: 'Phone Number',
+				name: 'phone',
+				type: 'string',
+				default: '',
+				description: 'Phone number for call and SMS notes',
+				routing: {
+					send: {
+						type: 'body',
+						property: 'params.phone',
 					},
 				},
 			},
@@ -271,6 +232,32 @@ export const noteCreateDescription: INodeProperties[] = [
 				},
 			},
 			{
+				displayName: 'Service Name',
+				name: 'service',
+				type: 'string',
+				default: '',
+				description: 'Service name for service message notes',
+				routing: {
+					send: {
+						type: 'body',
+						property: 'params.service',
+					},
+				},
+			},
+			{
+				displayName: 'Text',
+				name: 'text',
+				type: 'string',
+				default: '',
+				description: 'Text content for common, service message, SMS, and geolocation notes',
+				routing: {
+					send: {
+						type: 'body',
+						property: 'params.text',
+					},
+				},
+			},
+			{
 				displayName: 'Trigger Digital Pipeline',
 				name: 'is_need_to_trigger_digital_pipeline',
 				type: 'boolean',
@@ -280,6 +267,19 @@ export const noteCreateDescription: INodeProperties[] = [
 					send: {
 						type: 'body',
 						property: 'is_need_to_trigger_digital_pipeline',
+					},
+				},
+			},
+			{
+				displayName: 'Unique ID',
+				name: 'uniq',
+				type: 'string',
+				default: '',
+				description: 'Unique identifier for the call or service',
+				routing: {
+					send: {
+						type: 'body',
+						property: 'params.uniq',
 					},
 				},
 			},
