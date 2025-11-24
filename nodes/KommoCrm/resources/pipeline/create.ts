@@ -78,3 +78,4 @@ export const pipelineCreateDescription: INodeProperties[] = [
 		},
 	},
 ];
+

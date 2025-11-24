@@ -46,3 +46,4 @@ export const aiDescription: INodeProperties[] = [
 	...aiAnalyzeLeadDescription,
 	...aiGenerateSuggestionsDescription,
 ];
+

@@ -54,3 +54,4 @@ export const noteDeleteDescription: INodeProperties[] = [
 		description: 'The ID of the note to delete',
 	},
 ];
+

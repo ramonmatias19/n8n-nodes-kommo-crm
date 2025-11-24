@@ -74,3 +74,4 @@ export const chatDescription: INodeProperties[] = [
 	...chatGetContactChatsDescription,
 	...chatSendMessageDescription,
 ];
+

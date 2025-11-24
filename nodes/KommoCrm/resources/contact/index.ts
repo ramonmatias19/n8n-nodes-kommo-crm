@@ -74,3 +74,4 @@ export const contactDescription: INodeProperties[] = [
 	...contactCreateDescription,
 	...contactUpdateDescription,
 ];
+

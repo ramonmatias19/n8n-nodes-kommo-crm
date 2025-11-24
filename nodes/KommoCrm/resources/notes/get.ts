@@ -29,3 +29,4 @@ export const noteGetDescription: INodeProperties[] = [
 		description: 'The ID of the note to retrieve',
 	},
 ];
+

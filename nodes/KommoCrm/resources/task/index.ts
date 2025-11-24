@@ -74,3 +74,4 @@ export const taskDescription: INodeProperties[] = [
 	...taskCreateDescription,
 	...taskUpdateDescription,
 ];
+

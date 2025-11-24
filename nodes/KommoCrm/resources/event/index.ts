@@ -46,3 +46,4 @@ export const eventDescription: INodeProperties[] = [
 	...eventGetAllDescription,
 	...eventGetTypesDescription,
 ];
+

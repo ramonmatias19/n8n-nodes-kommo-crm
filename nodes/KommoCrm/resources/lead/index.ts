@@ -74,3 +74,4 @@ export const leadDescription: INodeProperties[] = [
 	...leadCreateDescription,
 	...leadUpdateDescription,
 ];
+

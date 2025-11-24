@@ -18,3 +18,4 @@ export const webhookDeleteDescription: INodeProperties[] = [
 		description: 'The ID of the webhook to delete',
 	},
 ];
+

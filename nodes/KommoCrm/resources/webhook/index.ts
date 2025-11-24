@@ -60,3 +60,4 @@ export const webhookDescription: INodeProperties[] = [
 	...webhookCreateDescription,
 	...webhookDeleteDescription,
 ];
+

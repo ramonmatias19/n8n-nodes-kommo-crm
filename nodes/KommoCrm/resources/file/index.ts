@@ -99,3 +99,4 @@ export const fileDescription: INodeProperties[] = [
 	...fileDeleteDescription,
 	...fileRestoreDescription,
 ];
+
