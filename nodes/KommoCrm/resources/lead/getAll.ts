@@ -90,6 +90,13 @@ export const leadGetAllDescription: INodeProperties[] = [
 						description: 'Filter leads created before this date (Unix timestamp)',
 					},
 					{
+						displayName: 'Created By',
+						name: 'created_by',
+						type: 'string',
+						default: '',
+						description: 'Filter by ID of the user who created the entity - comma-separated',
+					},
+					{
 						displayName: 'ID',
 						name: 'id',
 						type: 'string',
@@ -158,6 +165,13 @@ export const leadGetAllDescription: INodeProperties[] = [
 						type: 'dateTime',
 						default: '',
 						description: 'Filter leads updated before this date (Unix timestamp)',
+					},
+					{
+						displayName: 'Updated By',
+						name: 'updated_by',
+						type: 'string',
+						default: '',
+						description: 'Filter by ID of the user who changed the entity last - comma-separated',
 					},
 				],
 			},

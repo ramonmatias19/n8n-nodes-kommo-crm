@@ -49,6 +49,7 @@ export const userDescription: INodeProperties[] = [
 					request: {
 						method: 'POST',
 						url: '/users',
+						body: '={{ [$parameter] }}',
 					},
 				},
 			},

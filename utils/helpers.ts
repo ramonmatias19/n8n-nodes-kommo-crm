@@ -1,20 +1,37 @@
 import type { IDataObject, IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
+interface ApiErrorResponse {
+	response?: {
+		status?: number;
+		data?: {
+			detail?: string;
+			title?: string;
+		};
+	};
+	message?: string;
+}
+
+interface CustomField {
+	field_id: number;
+	values: unknown[];
+}
+
 /**
  * Enhanced error handling for Kommo CRM API responses
  */
 export function handleApiError(error: unknown, operation: string): never {
-	const errorMessage = error?.response?.data?.detail || error?.response?.data?.title || error?.message || 'Unknown error';
+	const apiError = error as ApiErrorResponse;
+	const errorMessage = apiError?.response?.data?.detail || apiError?.response?.data?.title || apiError?.message || 'Unknown error';
 
 	const errorDetails: IDataObject = {
 		message: errorMessage,
 		operation,
-		statusCode: error?.response?.status,
+		statusCode: apiError?.response?.status,
 		timestamp: new Date().toISOString(),
 	};
 
-	if (error?.response?.data) {
-		errorDetails.apiResponse = error.response.data;
+	if (apiError?.response?.data) {
+		errorDetails.apiResponse = apiError.response.data;
 	}
 
 	throw new Error(`Kommo CRM API Error: ${errorMessage}`);
@@ -81,7 +98,7 @@ export function parseCommaSeparatedArray(value: string | number[]): number[] | u
 /**
  * Validate and convert custom fields values
  */
-export function validateCustomFields(customFields: unknown): unknown[] | undefined {
+export function validateCustomFields(customFields: unknown): CustomField[] | undefined {
 	if (!customFields) return undefined;
 
 	try {
@@ -101,14 +118,16 @@ export function validateCustomFields(customFields: unknown): unknown[] | undefin
 		}
 
 		for (const field of fieldsArray) {
-			if (!field.field_id || !field.values) {
+			const customField = field as CustomField;
+			if (!customField.field_id || !customField.values) {
 				throw new Error('Each custom field must have field_id and values properties');
 			}
 		}
 
-		return fieldsArray;
+		return fieldsArray as CustomField[];
 	} catch (error) {
-		throw new Error(`Invalid custom fields format: ${error.message}`);
+		const apiError = error as ApiErrorResponse;
+		throw new Error(`Invalid custom fields format: ${apiError.message}`);
 	}
 }
 

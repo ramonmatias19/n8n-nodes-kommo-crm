@@ -50,6 +50,8 @@ export const leadDescription: INodeProperties[] = [
 							'filter[pipeline_id][]': '={{ parseCommaSeparatedArray($parameter.options.filter?.pipeline_id) }}',
 							'filter[statuses][0][pipeline_id]': '={{ $parameter.options.filter?.status_pipeline_id }}',
 							'filter[statuses][0][status_id]': '={{ $parameter.options.filter?.status_filter_id }}',
+							'filter[created_by][]': '={{ parseCommaSeparatedArray($parameter.options.filter?.created_by) }}',
+							'filter[updated_by][]': '={{ parseCommaSeparatedArray($parameter.options.filter?.updated_by) }}',
 						},
 					},
 				},
