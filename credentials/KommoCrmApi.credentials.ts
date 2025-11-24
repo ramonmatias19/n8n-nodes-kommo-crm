@@ -10,7 +10,7 @@ export class KommoCrmApi implements ICredentialType {
 
 	displayName = 'Kommo Crm API';
 
-	icon = 'file:kommoCrm.svg';
+	icon = undefined;
 
 	// Link to your community node's README
 	documentationUrl = 'https://developers.kommo.com/reference/account-parameters';

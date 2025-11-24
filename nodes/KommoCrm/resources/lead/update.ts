@@ -30,7 +30,7 @@ export const leadUpdateDescription: INodeProperties[] = [
 				name: 'custom_fields_values',
 				type: 'json',
 				default: '',
-				description: 'Custom fields values for the lead',
+				description: 'Custom fields values for the lead (JSON array format: [{"field_id": 123, "values": [{"value": "field value"}]}])',
 				routing: {
 					send: {
 						type: 'body',

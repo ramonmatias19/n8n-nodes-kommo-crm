@@ -31,20 +31,32 @@ export const leadGetDescription: INodeProperties[] = [
 				type: 'multiOptions',
 				options: [
 					{
+						name: 'Catalog Elements',
+						value: 'catalog_elements',
+					},
+					{
 						name: 'Contacts',
 						value: 'contacts',
+					},
+					{
+						name: 'Is Price Modified by Robot',
+						value: 'is_price_modified_by_robot',
 					},
 					{
 						name: 'Loss Reason',
 						value: 'loss_reason',
 					},
 					{
-						name: 'Catalog Elements',
-						value: 'catalog_elements',
+						name: 'Only Deleted',
+						value: 'only_deleted',
 					},
 					{
 						name: 'Source',
 						value: 'source',
+					},
+					{
+						name: 'Source ID',
+						value: 'source_id',
 					},
 				],
 				default: [],

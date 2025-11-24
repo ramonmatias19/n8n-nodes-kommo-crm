@@ -41,46 +41,6 @@ export const leadGetAllDescription: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'Query',
-				name: 'query',
-				type: 'string',
-				default: '',
-				description: 'Search query (searches through filled fields of the entity)',
-			},
-			{
-				displayName: 'With',
-				name: 'with',
-				type: 'multiOptions',
-				options: [
-					{
-						name: 'Catalog Elements',
-						value: 'catalog_elements',
-					},
-					{
-						name: 'Contacts',
-						value: 'contacts',
-					},
-					{
-						name: 'Is Price Modified By Robot',
-						value: 'is_price_modified_by_robot',
-					},
-					{
-						name: 'Loss Reason',
-						value: 'loss_reason',
-					},
-					{
-						name: 'Only Deleted',
-						value: 'only_deleted',
-					},
-					{
-						name: 'Source',
-						value: 'source',
-					},
-				],
-				default: [],
-				description: 'Additional data to include in the response',
-			},
-			{
 				displayName: 'Filter',
 				name: 'filter',
 				type: 'collection',
@@ -225,22 +185,6 @@ export const leadGetAllDescription: INodeProperties[] = [
 						default: 'desc',
 					},
 					{
-						displayName: 'Updated At',
-						name: 'updated_at',
-						type: 'options',
-						options: [
-							{
-								name: 'ASC',
-								value: 'asc',
-							},
-							{
-								name: 'DESC',
-								value: 'desc',
-							},
-						],
-						default: 'desc',
-					},
-					{
 						displayName: 'ID',
 						name: 'id',
 						type: 'options',
@@ -256,7 +200,73 @@ export const leadGetAllDescription: INodeProperties[] = [
 						],
 						default: 'desc',
 					},
+					{
+						displayName: 'Updated At',
+						name: 'updated_at',
+						type: 'options',
+						options: [
+							{
+								name: 'ASC',
+								value: 'asc',
+							},
+							{
+								name: 'DESC',
+								value: 'desc',
+							},
+						],
+						default: 'desc',
+					},
 				],
+			},
+			{
+				displayName: 'Page',
+				name: 'page',
+				type: 'number',
+				default: 1,
+				typeOptions: {
+					minValue: 1,
+				},
+				description: 'Page number for pagination',
+			},
+			{
+				displayName: 'Query',
+				name: 'query',
+				type: 'string',
+				default: '',
+				description: 'Search query (searches through filled fields of the entity)',
+			},
+			{
+				displayName: 'With',
+				name: 'with',
+				type: 'multiOptions',
+				options: [
+					{
+						name: 'Catalog Elements',
+						value: 'catalog_elements',
+					},
+					{
+						name: 'Contacts',
+						value: 'contacts',
+					},
+					{
+						name: 'Is Price Modified By Robot',
+						value: 'is_price_modified_by_robot',
+					},
+					{
+						name: 'Loss Reason',
+						value: 'loss_reason',
+					},
+					{
+						name: 'Only Deleted',
+						value: 'only_deleted',
+					},
+					{
+						name: 'Source',
+						value: 'source',
+					},
+				],
+				default: [],
+				description: 'Additional data to include in the response',
 			},
 		],
 	},
