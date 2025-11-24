@@ -1,11 +1,16 @@
 {
   "name": "n8n-nodes-kommo-crm",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Kommo CRM integration for n8n - Connect and automate your CRM workflows with Kommo's API",
   "license": "MIT",
   "homepage": "",
-  "keywords": ["n8n-community-node-package"],
-  "author": { "name": "Ramon Matias", "email": "contato@lumiar.com.br" },
+  "keywords": [
+    "n8n-community-node-package"
+  ],
+  "author": {
+    "name": "Ramon Matias",
+    "email": "contato@lumiar.com.br"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ramonmatias19/n8n-nodes-kommo-crm.git"
@@ -16,19 +21,24 @@
     "dev": "n8n-node dev",
     "lint": "n8n-node lint",
     "lint:fix": "n8n-node lint --fix",
-    "release": "n8n-node release",
+    "release": "npm run release:patch",
     "prepublishOnly": "n8n-node prerelease",
     "release:patch": "npm version patch && npm publish",
     "release:minor": "npm version minor && npm publish",
-    "release:major": "npm version major && npm publish",
-    "release": "npm run release:patch"
+    "release:major": "npm version major && npm publish"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "n8n": {
     "n8nNodesApiVersion": 1,
     "strict": true,
-    "credentials": ["dist/credentials/KommoCrmApi.credentials.js"],
-    "nodes": ["dist/nodes/KommoCrm/KommoCrm.node.js"]
+    "credentials": [
+      "dist/credentials/KommoCrmApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/KommoCrm/KommoCrm.node.js"
+    ]
   },
   "devDependencies": {
     "@n8n/node-cli": "*",
@@ -37,5 +47,7 @@
     "release-it": "^19.0.4",
     "typescript": "5.9.2"
   },
-  "peerDependencies": { "n8n-workflow": "*" }
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
 }
