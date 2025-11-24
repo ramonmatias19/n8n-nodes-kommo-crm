@@ -38,6 +38,7 @@ export const companyDescription: INodeProperties[] = [
 					request: {
 						method: 'POST',
 						url: '/companies',
+						body: '={{ [{name: $parameter.name, ...$parameter.additionalFields}] }}',
 					},
 				},
 			},
@@ -50,6 +51,7 @@ export const companyDescription: INodeProperties[] = [
 					request: {
 						method: 'PATCH',
 						url: '/companies',
+						body: '={{ [{id: $parameter.companyId, ...$parameter.additionalFields}] }}',
 					},
 				},
 			},

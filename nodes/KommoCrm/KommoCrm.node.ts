@@ -8,16 +8,13 @@ import { noteDescription } from './resources/notes';
 import { webhookDescription } from './resources/webhook';
 import { eventDescription } from './resources/event';
 import { tagDescription } from './resources/tag';
-import { chatDescription } from './resources/chat';
 import { fileDescription } from './resources/file';
 import { customFieldDescription } from './resources/customField';
-import { aiDescription } from './resources/ai';
 import { pipelineDescription } from './resources/pipeline';
 import { sourceDescription } from './resources/source';
 import { listDescription } from './resources/list';
 import { templateDescription } from './resources/template';
 import { incomingLeadDescription } from './resources/incomingLead';
-import { callDescription } from './resources/call';
 
 export class KommoCrm implements INodeType {
 	description: INodeTypeDescription = {
@@ -49,18 +46,6 @@ export class KommoCrm implements INodeType {
 				type: 'options',
 				noDataExpression: true,
 				options: [
-					{
-						name: 'AI',
-						value: 'ai',
-					},
-					{
-						name: 'Call',
-						value: 'call',
-					},
-					{
-						name: 'Chat',
-						value: 'chat',
-					},
 					{
 						name: 'Company',
 						value: 'company',
@@ -128,8 +113,6 @@ export class KommoCrm implements INodeType {
 				],
 				default: 'user',
 			},
-			...aiDescription,
-			...chatDescription,
 			...companyDescription,
 			...contactDescription,
 			...customFieldDescription,
@@ -146,7 +129,6 @@ export class KommoCrm implements INodeType {
 			...templateDescription,
 			...userDescription,
 			...webhookDescription,
-			...callDescription,
 		],
 	};
 }

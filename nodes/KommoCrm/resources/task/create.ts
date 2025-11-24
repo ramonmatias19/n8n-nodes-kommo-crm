@@ -16,12 +16,6 @@ export const taskCreateDescription: INodeProperties[] = [
 			show: showOnlyForTaskCreate,
 		},
 		description: 'The text/description of the task',
-		routing: {
-			send: {
-				type: 'body',
-				property: 'text',
-			},
-		},
 	},
 	{
 		displayName: 'Complete Till',
@@ -33,12 +27,6 @@ export const taskCreateDescription: INodeProperties[] = [
 			show: showOnlyForTaskCreate,
 		},
 		description: 'The date and time when the task should be completed',
-		routing: {
-			send: {
-				type: 'body',
-				property: 'complete_till',
-			},
-		},
 	},
 	{
 		displayName: 'Entity Type',
@@ -64,12 +52,6 @@ export const taskCreateDescription: INodeProperties[] = [
 			show: showOnlyForTaskCreate,
 		},
 		description: 'The type of entity this task is related to',
-		routing: {
-			send: {
-				type: 'body',
-				property: 'entity_type',
-			},
-		},
 	},
 	{
 		displayName: 'Entity ID',
@@ -104,12 +86,6 @@ export const taskCreateDescription: INodeProperties[] = [
 				type: 'number',
 				default: '',
 				description: 'The ID of the user responsible for this task',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'responsible_user_id',
-					},
-				},
 			},
 			{
 				displayName: 'Task Type ID',
@@ -117,12 +93,6 @@ export const taskCreateDescription: INodeProperties[] = [
 				type: 'number',
 				default: '',
 				description: 'The ID of the task type',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'task_type_id',
-					},
-				},
 			},
 			{
 				displayName: 'Duration',
@@ -130,12 +100,6 @@ export const taskCreateDescription: INodeProperties[] = [
 				type: 'number',
 				default: '',
 				description: 'The duration of the task in seconds',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'duration',
-					},
-				},
 			},
 		],
 	},

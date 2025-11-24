@@ -1,5 +1,4 @@
 import type { INodeProperties } from 'n8n-workflow';
-import { contactGetDescription } from './get';
 import { contactGetAllDescription } from './getAll';
 import { contactCreateDescription } from './create';
 import { contactUpdateDescription } from './update';
@@ -31,18 +30,6 @@ export const contactDescription: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'Get',
-				value: 'get',
-				action: 'Get a contact',
-				description: 'Get the data of a single contact',
-				routing: {
-					request: {
-						method: 'GET',
-						url: '=/contacts/{{$parameter.contactId}}',
-					},
-				},
-			},
-			{
 				name: 'Create',
 				value: 'create',
 				action: 'Create a new contact',
@@ -51,6 +38,7 @@ export const contactDescription: INodeProperties[] = [
 					request: {
 						method: 'POST',
 						url: '/contacts',
+						body: '={{ [{name: $parameter.name, ...$parameter.additionalFields}] }}',
 					},
 				},
 			},
@@ -70,8 +58,6 @@ export const contactDescription: INodeProperties[] = [
 		default: 'getAll',
 	},
 	...contactGetAllDescription,
-	...contactGetDescription,
 	...contactCreateDescription,
 	...contactUpdateDescription,
 ];
-

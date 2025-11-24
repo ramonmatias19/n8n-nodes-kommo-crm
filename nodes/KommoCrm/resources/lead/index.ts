@@ -51,6 +51,7 @@ export const leadDescription: INodeProperties[] = [
 					request: {
 						method: 'POST',
 						url: '/leads',
+						body: '={{ [{name: $parameter.name, ...$parameter.additionalFields}] }}',
 					},
 				},
 			},

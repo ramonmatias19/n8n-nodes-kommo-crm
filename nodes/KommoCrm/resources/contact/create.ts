@@ -16,12 +16,6 @@ export const contactCreateDescription: INodeProperties[] = [
 			show: showOnlyForContactCreate,
 		},
 		description: 'The full name of the contact',
-		routing: {
-			send: {
-				type: 'body',
-				property: 'name',
-			},
-		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -39,12 +33,6 @@ export const contactCreateDescription: INodeProperties[] = [
 				type: 'string',
 				default: '',
 				description: 'The first name of the contact',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'first_name',
-					},
-				},
 			},
 			{
 				displayName: 'Last Name',
@@ -52,12 +40,6 @@ export const contactCreateDescription: INodeProperties[] = [
 				type: 'string',
 				default: '',
 				description: 'The last name of the contact',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'last_name',
-					},
-				},
 			},
 			{
 				displayName: 'Responsible User ID',
@@ -65,12 +47,6 @@ export const contactCreateDescription: INodeProperties[] = [
 				type: 'number',
 				default: '',
 				description: 'The ID of the user responsible for this contact',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'responsible_user_id',
-					},
-				},
 			},
 			{
 				displayName: 'Custom Fields Values',
@@ -78,14 +54,7 @@ export const contactCreateDescription: INodeProperties[] = [
 				type: 'json',
 				default: '',
 				description: 'Custom fields values for the contact',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'custom_fields_values',
-					},
-				},
 			},
 		],
 	},
 ];
-

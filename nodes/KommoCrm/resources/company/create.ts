@@ -16,12 +16,6 @@ export const companyCreateDescription: INodeProperties[] = [
 			show: showOnlyForCompanyCreate,
 		},
 		description: 'The name of the company',
-		routing: {
-			send: {
-				type: 'body',
-				property: 'name',
-			},
-		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -39,12 +33,6 @@ export const companyCreateDescription: INodeProperties[] = [
 				type: 'json',
 				default: '',
 				description: 'Custom fields values for the company',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'custom_fields_values',
-					},
-				},
 			},
 			{
 				displayName: 'Responsible User ID',
@@ -52,12 +40,6 @@ export const companyCreateDescription: INodeProperties[] = [
 				type: 'number',
 				default: '',
 				description: 'The ID of the user responsible for this company',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'responsible_user_id',
-					},
-				},
 			},
 			{
 				displayName: 'Request ID',
@@ -65,12 +47,6 @@ export const companyCreateDescription: INodeProperties[] = [
 				type: 'string',
 				default: '',
 				description: 'Optional request ID that will be returned unchanged',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'request_id',
-					},
-				},
 			},
 		],
 	},

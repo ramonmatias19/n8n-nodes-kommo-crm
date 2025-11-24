@@ -51,6 +51,7 @@ export const taskDescription: INodeProperties[] = [
 					request: {
 						method: 'POST',
 						url: '/tasks',
+						body: '={{ [$parameter.additionalFields] }}',
 					},
 				},
 			},

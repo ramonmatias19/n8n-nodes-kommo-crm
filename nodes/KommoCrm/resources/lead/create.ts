@@ -16,12 +16,6 @@ export const leadCreateDescription: INodeProperties[] = [
 			show: showOnlyForLeadCreate,
 		},
 		description: 'The name of the lead',
-		routing: {
-			send: {
-				type: 'body',
-				property: 'name',
-			},
-		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -39,12 +33,6 @@ export const leadCreateDescription: INodeProperties[] = [
 				type: 'json',
 				default: '',
 				description: 'Custom fields values for the lead (JSON array format: [{"field_id": 123, "values": [{"value": "field value"}]}])',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'custom_fields_values',
-					},
-				},
 			},
 			{
 				displayName: 'Pipeline ID',
@@ -55,12 +43,6 @@ export const leadCreateDescription: INodeProperties[] = [
 					minValue: 1,
 				},
 				description: 'The ID of the pipeline to add the lead to',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'pipeline_id',
-					},
-				},
 			},
 			{
 				displayName: 'Price',
@@ -68,12 +50,6 @@ export const leadCreateDescription: INodeProperties[] = [
 				type: 'number',
 				default: '',
 				description: 'The sale amount for the lead',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'price',
-					},
-				},
 			},
 			{
 				displayName: 'Responsible User ID',
@@ -84,12 +60,6 @@ export const leadCreateDescription: INodeProperties[] = [
 					minValue: 1,
 				},
 				description: 'The ID of the user responsible for this lead',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'responsible_user_id',
-					},
-				},
 			},
 			{
 				displayName: 'Status ID',
@@ -100,12 +70,6 @@ export const leadCreateDescription: INodeProperties[] = [
 					minValue: 1,
 				},
 				description: 'The ID of the stage to add the lead to',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'status_id',
-					},
-				},
 			},
 		],
 	},
