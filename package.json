@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-kommo-crm",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "Kommo CRM integration for n8n - Connect and automate your CRM workflows with Kommo's API",
   "license": "MIT",
   "homepage": "",
