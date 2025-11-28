@@ -1,46 +1,27 @@
-import type { IDataObject, IHttpRequestOptions } from 'n8n-workflow';
+import type { IDataObject } from 'n8n-workflow';
 
-interface ApiError {
-	response?: {
-		data?: {
-			detail?: string;
-			title?: string;
-		};
-		status?: number;
-	};
-	message?: string;
+/**
+ * Parse comma-separated values and return as array
+ * Used in declarative routing expressions
+ */
+export function parseCommaSeparatedArray(value: string | undefined): string[] | undefined {
+	if (!value || typeof value !== 'string') {
+		return undefined;
+	}
+	return value.split(',').map(item => item.trim()).filter(item => item.length > 0);
 }
 
 /**
- * Enhanced error handling for Kommo CRM API responses
+ * Convert date to Unix timestamp
+ * Used in declarative routing expressions for date filtering
  */
-export function handleApiError(error: unknown, operation: string): never {
-	let errorMessage = 'Unknown error';
-	let statusCode: number | undefined;
-	let apiResponse: unknown;
+export function toUnixTimestamp(date: string | Date): number | undefined {
+	if (!date) return undefined;
 
-	if (error && typeof error === 'object') {
-		const err = error as ApiError;
-		errorMessage = err.response?.data?.detail ||
-			err.response?.data?.title ||
-			err.message ||
-			'Unknown error';
-		statusCode = err.response?.status;
-		apiResponse = err.response?.data;
-	}
+	const dateObj = typeof date === 'string' ? new Date(date) : date;
+	if (isNaN(dateObj.getTime())) return undefined;
 
-	const errorDetails: IDataObject = {
-		message: errorMessage,
-		operation,
-		statusCode,
-		timestamp: new Date().toISOString(),
-	};
-
-	if (apiResponse) {
-		errorDetails.apiResponse = apiResponse;
-	}
-
-	throw new Error(`Kommo CRM API Error: ${errorMessage}`);
+	return Math.floor(dateObj.getTime() / 1000);
 }
 
 /**
@@ -57,15 +38,6 @@ export function validateRequiredFields(fields: Record<string, unknown>, required
 	}
 }
 
-/**
- * Convert date to Unix timestamp for API
- */
-export function toUnixTimestamp(date: string | number | Date): number {
-	if (!date) return 0;
-
-	const dateObj = typeof date === 'string' ? new Date(date) : date instanceof Date ? date : new Date(date * 1000);
-	return Math.floor(dateObj.getTime() / 1000);
-}
 
 /**
  * Build query string parameters from options
@@ -83,26 +55,6 @@ export function buildQueryParams(options: IDataObject, mappings: Record<string, 
 	return params;
 }
 
-/**
- * Parse comma-separated values into arrays for filters
- */
-export function parseCommaSeparatedArray(value: string | number[]): number[] | undefined {
-	if (!value) return undefined;
-
-	if (Array.isArray(value)) {
-		return value.map(v => parseInt(String(v), 10)).filter(v => !isNaN(v));
-	}
-
-	if (typeof value === 'string') {
-		return value.split(',')
-			.map(v => v.trim())
-			.filter(v => v)
-			.map(v => parseInt(v, 10))
-			.filter(v => !isNaN(v));
-	}
-
-	return undefined;
-}
 
 /**
  * Validate and convert custom fields values
@@ -142,17 +94,3 @@ export function validateCustomFields(customFields: unknown): unknown[] | undefin
 	}
 }
 
-/**
- * Execute HTTP request with enhanced error handling
- */
-export async function executeApiRequest(
-	helpers: { httpRequest: (options: IHttpRequestOptions) => Promise<unknown> },
-	requestOptions: IHttpRequestOptions,
-	operation: string,
-): Promise<unknown> {
-	try {
-		return await helpers.httpRequest(requestOptions);
-	} catch (error) {
-		handleApiError(error, operation);
-	}
-}
